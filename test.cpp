@@ -1,10 +1,20 @@
 #include <iostream>
+#include <string.h>
 #include <stdio.h>
+class Student{
+    public: 
+    char name[13];
+    int age;
+    int grade;
+
+    private:
+    int secret;
+};
 int main()
 {
-   int a,b;
-   //std :: cin >> a >> b;
-   int c = 9;
-   std :: cout << c << std :: endl;
-    return 0;
+Student a;
+char n[13];
+std::cin >> n;
+strcpy(a.name,n);
+std::cout << n << std::endl;
 }
