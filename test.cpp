@@ -1,20 +1,25 @@
 #include <iostream>
-#include <string.h>
-#include <stdio.h>
-class Student{
-    public: 
-    char name[13];
-    int age;
-    int grade;
+#include <string>
+//#include <stdio.h>
+using namespace std;
 
-    private:
-    int secret;
+class test{
+    public:
+   int a;
+   test()
+   {
+    cout << "222" <<endl;
+   }
+     test(const test& t)
+     {
+        cout << "111" << endl;
+     }
 };
+
 int main()
 {
-Student a;
-char n[13];
-std::cin >> n;
-strcpy(a.name,n);
-std::cout << n << std::endl;
+    test a;
+    test b = a;
+
+
 }
