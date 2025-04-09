@@ -13,14 +13,25 @@ int main()
    arr.push_back(100);
    arr.pop_back();
    sort(arr.begin(),arr.end());
-   arr.resize(7,3);
-   for(int i = 0;i < arr.size();i++)
+   //arr.resize(7,3);
+   // for(int i = 0;i < arr.size();i++)
+   // {
+   //    cout << arr[i] << endl;
+   // }
+   for(vector<int>:: iterator it = arr.begin();it != arr.end();it++)
+   {
+      //cout << *it << endl;
+   }//arr.rbegin(),arr.rend()反向遍历
+   //arr.clear();//清空
+  // arr.empty();//判空
+   
+  int pos = lower_bound(arr.begin(),arr.end(),7) - arr.begin();
+  cout << pos << endl;
+  reverse(arr.begin(),arr.end());
+  for(int i = 0;i < arr.size();i++)
    {
       cout << arr[i] << endl;
    }
-   arr.clear();//清空
-  // arr.empty();//判空
-   
 
 return 0;
 }
