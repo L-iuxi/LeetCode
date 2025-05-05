@@ -4,23 +4,23 @@
 #include <stdlib.h>
 
 
-#define HASHNUM 13
-#define HASH(key) key % HASHNUM
+// #define HASHNUM 13
+// #define HASH(key) key % HASHNUM
 
-typedef struct HashNode {
-int value;
-int key;
-struct HashNode* next;
-}Hnode,*Hlist;
+// typedef struct HashNode {
+// int value;
+// int key;
+// struct HashNode* next;
+// }Hnode,*Hlist;
 
-struct HashTable {
-pthread_mutex_t mutex;
-Hlist head;
-};
+// struct HashTable {
+// pthread_mutex_t mutex;
+// Hlist head;
+// };
 
-typedef struct{
-struct HashTable table[HASHNUM];
-}hash_lock_t;
+// typedef struct{
+// struct HashTable table[HASHNUM];
+// }hash_lock_t;
 
 
 
