@@ -1,4 +1,5 @@
 {
+    "version": "2.0.0",
     "tasks": [
         {
             "type": "cppbuild",
@@ -42,7 +43,23 @@
             ],
             "group": "build",
             "detail": "调试器生成的任务。"
+        },
+        {
+            "label": "build C file",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-g", // 调试信息
+                "${file}", // 当前文件
+                "-o", // 输出文件
+                "${fileDirname}/${fileBasenameNoExtension}" // 输出文件与源文件同名
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Generated task for C program"
         }
-    ],
-    "version": "2.0.0"
+    ]
 }

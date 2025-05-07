@@ -28,10 +28,12 @@ int main()
   int pos = lower_bound(arr.begin(),arr.end(),7) - arr.begin();
   cout << pos << endl;
   reverse(arr.begin(),arr.end());
-  for(int i = 0;i < arr.size();i++)
-   {
-      cout << arr[i] << endl;
-   }
-
+//   for(int i = 0;i < arr.size();i++)
+//    {
+//       cout << arr[i] << endl;
+//    }
+//arr.erase(unique(arr.begin(),arr.end()),arr.end());//消除相邻重复元素
+//gcd(a,b)//a和b的最大公因数
+//lcm(a,b)//a和b的最小公倍数
 return 0;
 }
