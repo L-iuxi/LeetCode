@@ -1,37 +1,25 @@
-class Solution {
-public:
-    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
-        vector<int>result;
-        unordered_set<int> set;
-        if(nums1.size() > nums2.size())
+void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n) {
+    int l1 = m-1;
+    int l2 = n-1;
+    int idx = nums1Size - 1;
+    while(l1 >= 0 && l2 >= 0)
+    {
+        if(nums1[l1] > nums2[l2])
         {
-        for(int i = 0;i < nums1.size();i++)
-        {
-            for(int j = 0 ;j < nums2.size();j++)
-            {
-                if(nums2[j] == nums1[i])
-                {
-                    set.insert(nums1[i]);
-                    
-                }
-            }
-        }
+            nums1[idx] = nums1[l1];
+            l1--;
         }else{
-               for(int i = 0;i < nums2.size();i++)
-        {
-            for(int j = 0 ;j < nums1.size();j++)
-            {
-                if(nums1[j] == nums2[i])
-                {
-                    set.insert(nums2[i]);
-                    
-                }
-            }
+            nums1[idx] = nums2[l2];
+            l2--;
         }
-        }
-        result.insert(result.end(),set.begin(),set.end());
-    return result;
+        idx--;
     }
 
-    
-};
+    while(l2 >= 0)
+    {
+        nums1[idx] = nums2[l2];
+        l2--;
+        idx--;
+    }
+        
+    }
