@@ -1,30 +1,14 @@
-int strStr(char* haystack, char* needle) {
-    int i = 0;
-    int result = -1;
-    int len = strlen(needle);
-    while(haystack[i] != '\0')
-    {
-        if(result != -1)
-        {
-            break;
-        }
-        if(haystack[i] == needle[0])
-        {
-            int h = i;
-            result = i;
-            for(int j = 0;j < len;j++)
-            {
+void reverseString(char* s, int sSize) {
+  // int len = strlen(s);
+   int left = 0,right = sSize - 1;
+   while(left < right)
+   {
+    char t;
+    t = s[left];
+    s[left] = s[right];
+    s[right] = t;
+    right--;
+    left++;
+   } 
 
-                if(haystack[h] != needle[j])
-                {
-                    result = -1;
-                    break;
-                }
-                h++;
-            }
-        
-        }
-        i++;
-    }
-    return result;
 }
