@@ -1,20 +1,17 @@
-int maxab(int a,int b)
-{
-    if(a>b)
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* stableMountains(int* height, int heightSize, int threshold, int* returnSize) {
+    int *result = (int*)malloc(sizeof(int) * 100);
+    (*returnSize) = 0;
+    for(int i = 1;i < heightSize;i++)
     {
-        return a;
-    }
-    return b;
-}
-int subarraySum(int* nums, int numsSize) {
-    int sum = 0;
-    for(int i = 0;i < numsSize;i++)
-    {
-        int start = maxab(0,i-nums[i]);
-        for(int j = start;j <= i;j++)
+        int t = i-1;
+        if(height[i-1] > threshold)
         {
-            sum += nums[j];
+            result[*returnSize] = i;
+            (*returnSize)++;
         }
     }
-    return sum;
+    return result;
 }
