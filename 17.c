@@ -1,20 +1,21 @@
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-int* getSneakyNumbers(int* nums, int numsSize, int* returnSize) {
-   int *result = (int*)malloc(sizeof(int) *100);
-   *returnSize = 0;
-   for(int i = 0;i < numsSize;i++)
-   {
-    for(int j = i+1;j < numsSize;j++)
-   {
-    if(nums[i] == nums[j])
+int minimumChairs(char* s) {
+    int max = 0;
+    int sum = 0;
+    int len = strlen(s);
+    for(int i = 0;i < len;i++)
     {
-        result[*returnSize] = nums[i];
-        (*returnSize)++;
-        break;
+        if(s[i] == 'E')
+        {
+            sum++;
+        }
+        if(s[i] == 'L')
+        {
+            sum--;
+        }
+        if(sum > max)
+        {
+            max = sum;
+        }
     }
-   }
-   } 
-   return result;
+    return max;
 }
