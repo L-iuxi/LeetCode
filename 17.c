@@ -1,21 +1,16 @@
-int minimumChairs(char* s) {
-    int max = 0;
-    int sum = 0;
-    int len = strlen(s);
-    for(int i = 0;i < len;i++)
+int countTestedDevices(int* batteryPercentages, int batteryPercentagesSize) {
+    int count = 0;
+   for(int i = 0;i <batteryPercentagesSize;i++)
+   {
+    batteryPercentages[i]-=count;
+    if(batteryPercentages[i] < 0)
     {
-        if(s[i] == 'E')
-        {
-            sum++;
-        }
-        if(s[i] == 'L')
-        {
-            sum--;
-        }
-        if(sum > max)
-        {
-            max = sum;
-        }
+        batteryPercentages[i] = 0;
     }
-    return max;
+    if(batteryPercentages[i] > 0)
+    {
+        count++;
+    }
+   } 
+   return count;
 }
